@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>关键词高亮</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+        margin: 50px auto;
+        width: 304px;
+      }
+      .search-btn {
+        margin-left: 20px;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .content li {
+        padding: 6px;
+        border-bottom: 1px solid #ccc;
+        color: #666;
+      }
+      .content li:hover {
+        background-color: #ecf0ed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <form class="form-inline">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="请输入关键词"
+          oninput="hanldeInput()"
+        />
+        <button type="button" class="search-btn btn btn-primary">搜索</button>
+      </form>
+      <ul class="content"></ul>
+    </div>
+    <script>
+      var $ = function(selector) {
+        var elements = document.querySelectorAll(selector);
+        return elements.length > 1 ? elements : elements[0];
+      };
+      let list = [
+        {
+          id: 1,
+          address: "上海野生动物园"
+        },
+        {
+          id: 2,
+          address: "上饶野生动物园"
+        },
+        {
+          id: 3,
+          address: "北京巷子"
+        },
+        {
+          id: 4,
+          address: "上海中心"
+        },
+        {
+          id: 5,
+          address: "上海黄埔江"
+        },
+        {
+          id: 6,
+          address: "迪士尼上海"
+        },
+        {
+          id: 7,
+          address: "陆家嘴上海中心"
+        }
+      ];
+      function hanldeInput() {
+        var value = event.target.value;
+        console.log('value => ', value);
+        var data = list.filter(v => value && !!~v.address.indexOf(value));
+        render(data, value);
+      }
+      
+      function render(data, value) {
+        console.log('data => ', data);
+        var content = $(".content");
+        content.innerHTML = '';
+        var frag = document.createDocumentFragment();
+        data.forEach(item => {
+          var li = document.createElement("li");
+          var reg = new RegExp(`\(${value}\)`, 'g')
+          li.innerHTML = item.address.replace(reg, `<mark>$1</mark>`)
+          frag.appendChild(li);
+        });
+        content.appendChild(frag);
+      }
+    </script>
+  </body>
+</html>
