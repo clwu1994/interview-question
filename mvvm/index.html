@@ -4,27 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>mvvm双向数据绑定</title>
+    <script src="./mvvm.js"></script>
   </head>
   <body>
-    <input type="text" id="in"/>
-    输入的值为：<span id="out"></span>
-
+    <div id="app">
+      <input type="text" v-model="text" />
+      输入的值为：{{ text }}
+      <div>
+        <input type="text" v-model="text" />
+      </div>
+    </div>
     <script>
-        var int = document.getElementById('in');
-        var out = document.getElementById('out');
-        var obj = {};
-
-        Object.defineProperty(obj, 'msg', {
-            enumerable: true,
-            configurable: true,
-            set (newVal) {
-                out.innerHTML = newVal;
-            }
-        })
-
-        int.addEventListener('input', function(e) {
-            obj.msg = e.target.value;
-        })
+      var vm = new MVue({
+        el: "#app",
+        data: {
+          text: "hello world"
+        }
+      });
     </script>
   </body>
 </html>
