@@ -23,6 +23,6 @@ class Element {
     return el;
   }
 }
-module.exports = function(tagName, props, children) {
+export default function(tagName, props, children) {
   return new Element(tagName, props, children);
 };

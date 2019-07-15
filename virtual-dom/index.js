@@ -17,8 +17,7 @@
 //     {tagName: 'li', props: {class: 'item'}, children: ["Item 3"]},
 //   ]
 // }
-
-var el = require("./element");
+import el from "./element";
 var ul = el("ul", { id: "list" }, [
   el("li", { class: "item" }, ["Item 1"]),
   el("li", { class: "item" }, ["Item 2"]),
