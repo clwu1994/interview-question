@@ -1,42 +1,36 @@
-var obj = {
+var entry = {
   a: {
     b: {
       c: {
-        dd: 'hello',
-        cc: 'world'
-      },
-      d: 'sasa'
-    },
-    xx: {
-      sas: {
-        name: 'xiaozhang'
+        dd: 'abcdd'
       }
-    }
+    },
+    d: {
+      xx: 'adxx'
+    },
+    e: 'ae'
   }
 }
-// output:
-// var obj1 = {
-//   'a.b.c.dd': 'hello',
-//   'a.b.c.cc': 'world',
-//   'a.b.d': 'sasa',
-//   'a.xx.sas.name': 'xiaozhang'
-// }
-var keys = []
+var output = {
+  'a.b.c.dd': 'abcdd',
+  'a.d.xx': 'adxx',
+  'a.e': 'ae'
+}
+var keys = [];
 function flatMap(from, to) {
   for (var key in from) {
     var res = from[key];
-    if (typeof res === 'object') {
+    if (typeof res === "object") {
       keys.push(key);
       flatMap(res, to);
-      keys.pop();
     } else {
       keys.push(key);
-      to[keys.join('.')] = res;
-      keys.pop();
+      to[keys.join(".")] = res;
     }
+    keys.pop();
   }
 }
 
 var obj1 = {};
 flatMap(obj, obj1);
-console.log(obj1)
+console.log(obj1);
