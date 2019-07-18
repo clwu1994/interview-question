@@ -27,11 +27,12 @@ function flatMap(from, to) {
     var res = from[key];
     if (typeof res === 'object') {
       keys.push(key);
-      flatMap(res, to)
+      flatMap(res, to);
+      keys.pop();
     } else {
       keys.push(key);
       to[keys.join('.')] = res;
-      keys = [];
+      keys.pop();
     }
   }
 }
