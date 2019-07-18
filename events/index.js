@@ -59,21 +59,26 @@ var DOMUtil = {
   }
 };
 var nav = document.getElementById("nav");
-EventUtil.on(nav, "click", function(event) {
-  var event = EventUtil.getEvent(event);
-  var target = EventUtil.getTarget(event);
+nav.addEventListener('click', function(event) {
+  console.log(event);
   event.preventDefault();
-  var children = this.children;
-  var i, len;
-  var anchor;
-  var obj = {};
-  for (i = 0, len = children.length; i < len; i++) {
-    if (children[i] === target) {
-      obj.index = i + 1;
-      anchor = target.getElementsByTagName("a")[0];
-      obj.name = DOMUtil.text(anchor);
-      obj.link = DOMUtil.prop(anchor, "href");
-    }
-  }
-  alert("index: " + obj.index + " name: " + obj.name + " link: " + obj.link);
+})
+EventUtil.on(nav, "click", function(event) {
+  // var event = EventUtil.getEvent(event);
+  // var target = EventUtil.getTarget(event);
+  // console.log(target.tagName);
+  // event.preventDefault();
+  // var children = this.children;
+  // var i, len;
+  // var anchor;
+  // var obj = {};
+  // for (i = 0, len = children.length; i < len; i++) {
+  //   if (children[i] === target) {
+  //     obj.index = i + 1;
+  //     anchor = target.getElementsByTagName("a")[0];
+  //     obj.name = DOMUtil.text(anchor);
+  //     obj.link = DOMUtil.prop(anchor, "href");
+  //   }
+  // }
+  // alert("index: " + obj.index + " name: " + obj.name + " link: " + obj.link);
 });
