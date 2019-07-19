@@ -30,7 +30,3 @@ function flatMap(from, to) {
     keys.pop();
   }
 }
-
-var obj1 = {};
-flatMap(obj, obj1);
-console.log(obj1);
