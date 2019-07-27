@@ -1,0 +1,153 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+    <style>
+        html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select, span {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            min-height: 100%;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        img {
+            border: none;
+            vertical-align: middle;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #232323;
+        }
+
+        table {
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        input, textarea {
+            outline: none;
+            border: none;
+        }
+
+        textarea {
+            resize: none;
+            overflow: auto;
+        }
+
+        img {
+            vertical-align: top;
+            border: none
+        }
+
+        @font-face {
+            font-family: YH;
+            src: url("file:/Users/wusi/IdeaProjects/xt-youxuan-server/youxuan-web-portal/target/classes/template/font/YaHei.ttf");
+        }
+
+        @font-face {
+            font-family: DINAlternateBold;
+            src: url("file:/Users/wusi/IdeaProjects/xt-youxuan-server/youxuan-web-portal/target/classes/template/font/DIN Alternate Bold.ttf");
+        }
+
+        @font-face {
+            font-family: PingFangRegular;
+            src: url("file:/Users/wusi/IdeaProjects/xt-youxuan-server/youxuan-web-portal/target/classes/template/font/PingFang Regular.ttf");
+        }
+
+        @font-face {
+            font-family: PingFangBold;
+            src: url("file:/Users/wusi/IdeaProjects/xt-youxuan-server/youxuan-web-portal/target/classes/template/font/PingFang Bold.ttf");
+        }
+    </style>
+</head>
+
+<body style="">
+<div style="width: 1000pt;height: 1800pt;">
+    <div>
+        <img style="width: 1000pt;height: 240pt" alt="header" src="photo/head.png">
+    </div>
+    <div style="
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: #ED0309;
+    border-width: 6pt;
+    height: 1560pt;
+    ">
+        <!--用户-->
+        <div>
+            <div style="float: left;margin: 50pt 28pt 52pt 50pt;">
+                <img style="height: 120pt;width: 120pt" alt="avatar"
+                     src="https://xituan.oss-cn-shenzhen.aliyuncs.com/crm/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b8551560647892307.jpg">
+                <img style="height: 120pt;width: 120pt; margin-top: -120pt" alt="photo" src="photo/avatar-hidden.png">
+            </div>
+            <div style="float: left;">
+                <div style="margin: 68pt 0pt 20pt 0pt;font-size: 36pt;font-family: 'YH';color: #747474;line-height: 36pt;">
+                    <span th:text="${authorName}">用户名-美颜秘笈-米粒</span>
+                </div>
+                <div style="font-family: 'YH';font-size: 44pt;line-height: 44pt">推荐给你一个好物</div>
+            </div>
+        </div>
+        <!--商品图片-->
+        <div style="clear: both;text-align: center">
+            <img style="height: 900pt;width: 900pt" alt="photo"
+                 src="https://xituan.oss-cn-shenzhen.aliyuncs.com/crm/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b8551560647892307.jpg">
+        </div>
+        <div style="float: left;width: 706pt;">
+            <div style="width: 680pt;margin-left: 50pt;">
+                <div>
+                    <span style="color: #E60113;">
+                        <span style="font-size: 70pt;font-family: 'PingFangBold';line-height: 100%;letter-spacing: -18pt;">￥</span>
+                        <span style="font-size: 130pt;font-family: 'Serif';line-height: 130pt;letter-spacing: -8pt;" th:text="${price}">368.5</span>
+                    </span>
+                    <span style="font-size: 30pt;font-family: '苹方-简 常规体';color: #9B9B9B;text-decoration: line-through;">
+                        <span style="text-decoration: line-through;" th:text="'市场价'+${marketPrice}">市场价10000</span>
+                    </span>
+                </div>
+                <div style="font-family: 'PingFangRegular';font-size: 36pt;color: rgb(51,51,51);width: 606pt;word-wrap: break-word; line-height: 100%">
+                        <span th:text="${productName}">
+                            商品名称商品名称商品名称商品名称商品名称商品名称
+                        </span>
+                </div>
+                <div>
+                    <div style="position: absolute;margin-top: 12pt;">
+                        <img style="width: 533pt" alt="限时特卖" src="photo/activity-type.png">
+                    </div>
+                    <div style="position: absolute;left: 281pt;font-family: 'PingFangRegular';font-size: 30pt;color: #F54E07;/* height: 96pt; *//* width: 689pt; */margin-top: 20pt;">
+                        <span th:text="${productName}">
+                            7月15日截止
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div style="float: left;width: 240pt;height: 240pt;margin-top: 53pt;text-align: center">
+            <img alt="qrcode" style="height: 240pt;width: 240pt"
+                 src="https://xituan.oss-cn-shenzhen.aliyuncs.com/crm/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b8551560647892307.jpg">
+            <p style="color: #9B9B9B; font-family: 'PingFangRegular'; font-size: 28pt">长按识别图标</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
