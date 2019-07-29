@@ -30,7 +30,7 @@ npm i commitizen cz-conventional-changelog -D
 - Header: Header 部分只有一行，包括三个字段：type（必需）、scope（可选）和subject（必需）。
 - type： type用于说明 commit 的类别，只允许使用下面 12 个标识。
 |type|描述|
-|:|:|
+|:---|:---|
 |build|主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交|
 |ci|主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle 等)的提交|
 |docs|文档更新|
