@@ -29,19 +29,20 @@ npm i commitizen cz-conventional-changelog -D
 > 不管是哪一个部分，任何一行都不得超过 72 个字符（或 100 个字符）。这是为了避免自动换行影响美观。
 - Header: Header 部分只有一行，包括三个字段：type（必需）、scope（可选）和subject（必需）。
 - type： type用于说明 commit 的类别，只允许使用下面 12 个标识。
-|type|描述|
+
+| type | 描述 |
 |:---|:---|
-|build|主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交|
-|ci|主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle 等)的提交|
-|docs|文档更新|
-|feat|新增功能|
-|fix|bug 修复|
-|perf|性能, 体验优化|
-|refactor|重构代码(既没有新增功能，也没有修复 bug)|
-|style|不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等，没有改变代码逻辑)|
-|test|新增测试用例或是更新现有测试|
-|revert|回滚某个更早之前的提交|
-|chore|不属于以上类型的其他类型|
+| build | 主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交 |
+| ci | 主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle 等)的提交 |
+| docs | 文档更新 |
+| feat | 新增功能 |
+| fix | bug 修复 |
+| perf | 性能, 体验优化|
+| refactor | 重构代码(既没有新增功能，也没有修复 bug) |
+| style | 不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等，没有改变代码逻辑) |
+| test | 新增测试用例或是更新现有测试 |
+| revert | 回滚某个更早之前的提交 |
+| chore | 不属于以上类型的其他类型 |
 > 如果 type 为 feat 和 fix，则该 commit 将出现在 Change log 之中。
 - scope: scope用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。
 - subject: subject是 commit 目的的简短描述，不超过 50 个字符。
